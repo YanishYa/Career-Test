@@ -1,0 +1,64 @@
+<div class="wrapper" *ngIf="!dataSent && !isLoading">
+  <div class="test-table">
+
+
+    <div class="progress-bar-container">
+      <div class="progress-bar-center">
+        <div class="progress-bar-line-container">
+          <div class="progress-bar-frame"></div>
+          <div class="progress-bar-line">
+            <div class="progress-bar-line-image"
+                 [style.width]="progressBarValue + '%'"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="test-options">
+      <ul>
+        <ng-container *ngFor="let variant of data.getPage()">
+          <li>
+            <div class="option-name"
+                 [style.font-size]="getFontSize(variant!.name)">
+              {{ variant.name }}
+            </div>
+            <app-star-range [(value)]="variant.value"
+                            (valueChange)="checkSelected()"></app-star-range>
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+
+
+  </div>
+
+
+  <div class="navigation-buttons">
+    <app-common-action-button class="action-button"
+                              text="Назад"
+                              (cl)="data.getPrevios()"
+                              [hovImage]="'url(/assets/buttons/action-button/hov.png'"
+                              [unhovImage]="'url(/assets/buttons/action-button/unhov.png'"
+                              [disableImage]="'url(/assets/buttons/action-button/disabled.png'"
+                              [disabled]="!data.checkPrevios()">
+    </app-common-action-button>
+    <app-common-action-button class="action-button"
+                              text="Ответить"
+                              (cl)="sendResult()"
+                              [hovImage]="'url(/assets/buttons/action-button/hov.png'"
+                              [unhovImage]="'url(/assets/buttons/action-button/unhov.png'"
+                              [disableImage]="'url(/assets/buttons/action-button/disabled.png'"
+                              [disabled]="requiredOptions != selected">
+    </app-common-action-button>
+    <app-common-action-button class="action-button"
+                              text="Дальше"
+                              (cl)="data.getNext()"
+                              [hovImage]="'url(/assets/buttons/action-button/hov.png'"
+                              [unhovImage]="'url(/assets/buttons/action-button/unhov.png'"
+                              [disableImage]="'url(/assets/buttons/action-button/disabled.png'"
+                              [disabled]="!data.checkNext()">
+    </app-common-action-button>
+  </div>
+  <div class="dubna"></div>
+</div>

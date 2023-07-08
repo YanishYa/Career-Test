@@ -1,0 +1,11 @@
+<div
+  (mousemove)="rotate($event, cardItem)"
+  (mouseout)="stopRotate(cardItem)"
+  class="card"
+>
+  <div
+    #cardItem
+    [style.background-image]="'url(' + img + ')'"
+    class="card-item"
+  ></div>
+</div>

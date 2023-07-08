@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Penguin';
+    src: url('PenguinAttackCyrillic.woff2') format('woff2'),
+        url('PenguinAttackCyrillic.woff') format('woff'),
+        url('PenguinAttack.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

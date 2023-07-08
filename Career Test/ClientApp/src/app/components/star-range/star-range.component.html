@@ -1,0 +1,5 @@
+<div class="stars-container">
+  <app-star-checkbox *ngFor="let i of values" (change)="changeValue($event, i.num)" (hoverChange)="changeHover($event, i.num)" [value]="i.value" [(hover)]="i.hover"></app-star-checkbox>
+
+</div>
+

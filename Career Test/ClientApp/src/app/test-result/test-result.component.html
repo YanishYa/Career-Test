@@ -1,0 +1,217 @@
+<ng-container *ngIf="false">
+  <button class="c-btn" routerLink="/test">{{ "<-" }}</button>
+  <div class="result-container" *ngIf="!data.secondValid">
+    <div style="text-align: center" class="text-deck">
+      <p>Поздравляем, дорогой путник!</p>
+      <p>
+        Мы спешим сообщить тебе радостную весть: тебя приглашают стать
+        подмастерьем гильдии - {{ resultName }}
+      </p>
+      <p>Твои супер способности {{ getPowers() }}</p>
+    </div>
+    <div class="cards-container">
+      <app-prof-card
+        [img]="
+          '/assets/results/' +
+          +gender +
+          '/' +
+          data.mainResults[0].result.linkToImage
+        "
+      ></app-prof-card>
+    </div>
+  </div>
+
+  <div class="result-container" *ngIf="data.secondValid">
+    <div style="text-align: center" class="text-deck">
+      <p>Поздравляем, дорогой путник!</p>
+      <p>
+        Мы спешим сообщить тебе радостную весть: тебя приглашают стать
+        подмастерьем сразу двух гильдий -
+        {{ data.mainResults[0].result.guildName }},
+        {{ data.mainResults[1].result.guildName }}
+      </p>
+      <p>Твои супер способности {{ getPowers() }}</p>
+    </div>
+    <div class="cards-container">
+      <app-prof-card
+        [img]="
+          '/assets/results/' +
+          +gender +
+          '/' +
+          data.mainResults[0].result.linkToImage
+        "
+      ></app-prof-card>
+      <app-prof-card
+        [img]="
+          '/assets/results/' +
+          +gender +
+          '/' +
+          data.mainResults[1].result.linkToImage
+        "
+      ></app-prof-card>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="step === 1">
+  <div class="main-container">
+    <div
+      class="main"
+      [style.background-image]="
+        'url(\'' +
+        '/assets/results/backgrounds/' +
+        data.mainResults[0].result.linkToImage +
+        '.png' +
+        '\')'
+      "
+    ></div>
+  </div>
+
+  <div
+    class="door"
+    [style.background-image]="
+      doorHighlighted
+        ? 'url(\'' +
+          '/assets/results/doors/highlighted/' +
+          data.mainResults[0].result.linkToImage +
+          '.png' +
+          '\')'
+        : 'url(\'' +
+          '/assets/results/doors/' +
+          data.mainResults[0].result.linkToImage +
+          '.png' +
+          '\')'
+    "
+    (click)="secondStep()"
+    (mouseenter)="doorChangeHighlight(true)"
+    (mouseleave)="doorChangeHighlight(false)"
+  ></div>
+  <div class="item-card-container card-container">
+    <app-prof-card
+      [img]="
+        '/assets/results/items/' +
+        data.mainResults[2].result.linkToImage +
+        '.png'
+      "
+    ></app-prof-card>
+  </div>
+  <div class="character-card-container card-container">
+    <app-prof-card
+      [img]="
+        '/assets/results/characters/' +
+        +gender +
+        '/' +
+        data.mainResults[0].result.linkToImage +
+        '.png'
+      "
+    ></app-prof-card>
+  </div>
+  <div class="animal-card-container card-container">
+    <app-prof-card
+      [img]="
+        '/assets/results/animals/' +
+        data.mainResults[1].result.linkToImage +
+        '.png'
+      "
+    ></app-prof-card>
+  </div>
+  <div class="buttons-first-page">
+    <app-action-button
+      text="Описание"
+      [char]="data.mainResults[0].result.linkToImage"
+      [width]="'350px'"
+      (click)="infoType = 0"
+    >
+    </app-action-button>
+    <app-action-button
+      text="Способности"
+      [char]="data.mainResults[0].result.linkToImage"
+      [width]="'350px'"
+      (click)="infoType = 1"
+    >
+    </app-action-button>
+  </div>
+  <!-- <div class="powers">
+    <p [innerHTML]="getPowers()"></p>
+  </div> -->
+  <div class="arrow">
+    <app-prof-card [img]="'/assets/arrow.png'"></app-prof-card>
+  </div>
+
+  <div class="board-1">
+    <div class="board-title">{{ data.mainResults[0].result.name }}</div>
+    <div class="board-body style-3" *ngIf="infoType === 0">{{ data.mainResults[0].result.description }}</div>
+    <div class="board-body style-3" *ngIf="infoType === 1">
+      <ul>
+        <li *ngFor="let p of data.results">
+          {{ p.result.power }} - {{ p.count }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div style="position: absolute; width: 150px; height: 150px; right: 50px; top: 50px; background-image: url('/assets/logo2.png'); background-repeat: round;"></div>
+</ng-container>
+
+<!-- <ng-container *ngIf="step === 2">
+  <div
+    class="main"
+    [style.background-image]="
+      'url(\'' + '/assets/results/back2' + '.png' + '\')'
+    "
+  ></div>
+  <div
+    class="board"
+    [style.background-image]="
+      'url(\'' +
+      '/assets/results/boards/' +
+      data.mainResults[0].result.linkToImage +
+      '.png' +
+      '\')'
+    "
+  >
+</div>
+  <div class="actions">
+    <app-action-button
+      text="Начать заново"
+      [char]="data.mainResults[0].result.linkToImage"
+      (click)="restart()"
+    >
+    </app-action-button>
+    <app-action-button
+      text="Узнать больше"
+      [char]="data.mainResults[0].result.linkToImage"
+      (click)="moveToMainSite()"
+    >
+    </app-action-button>
+  </div>
+  <div class="chairs">
+    <app-chair-button
+      *ngFor="let chair of data.mainResults[0].result.chairs"
+      [text]="chair.name"
+      [char]="data.mainResults[0].result.linkToImage"
+      (click)="selectChair(chair)"
+    >
+    </app-chair-button>
+  </div>
+
+  <div class="sign">
+    <app-prof-card
+      [img]="
+        '/assets/results/signs/' +
+        data.mainResults[0].result.linkToImage +
+        '.png'
+      "
+    ></app-prof-card>
+  </div>
+  <div class="chair-info">
+    <div class="chair-info-name">{{ selectedChair?.name }}</div>
+    <div
+      class="chair-info-description"
+      [style.font-size]="getFontSize(selectedChair!.description)"
+    >
+      {{ selectedChair?.description }}
+    </div>
+  </div>
+</ng-container> -->
+
+<img hidden *ngFor="let img of images" [src]="img" />

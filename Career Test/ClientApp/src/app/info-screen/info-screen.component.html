@@ -1,0 +1,11 @@
+<mat-card class="form">
+  <p class="greet-text">
+    {{ text }}
+  </p>
+  <div class="form-buttons">
+    <button type="button" class="c-btn" *ngIf="register" routerLink="/register">Зарегистрироваться</button>
+    <button type="button" class="c-btn" *ngIf="refresh" (click)="refreshPage()">Открыть тест</button>
+    <!-- <button class="c-btn" routerLink="/login">Вход</button>
+    <button class="c-btn" routerLink="/register">Регистрация</button> -->
+  </div>
+</mat-card>

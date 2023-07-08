@@ -1,0 +1,60 @@
+<div mat-dialog-content class="content" [ngClass]="{'big-content': type == 0} " style="overflow: hidden;">
+  <div [ngSwitch]="type">
+    <template *ngSwitchCase="0" [ngTemplateOutlet]="youtube"></template>
+    <template *ngSwitchCase="1" [ngTemplateOutlet]="test"></template>
+
+    <template *ngSwitchCase="2" [ngTemplateOutlet]="aftertest2"></template>
+    <template *ngSwitchCase="3" [ngTemplateOutlet]="aftertest"></template>
+  </div>
+  <!-- <ng-content *ngTemplateOutlet="test">
+
+  </ng-content> -->
+
+  <button mat-icon-button class="close-button" (click)="ref.close()">
+    <img class="close-icon" width="40" height="40" src="/assets/icons/close-icon.png"/>
+  </button>
+</div>
+
+
+
+<ng-template #test>
+  <div class="style-3 content-body">
+    <p>ГУД-Вселенная огромна, в ней есть 7 гильдий, которые открывают перед тобой свои двери и ждут тебя.</p>
+    <p>А у тебя много талантов и интересов.</p>
+    <p>Чтобы понять, какая гильдия подойдет тебе больше, оцени насколько тебе нравится каждое из предложенных действий,
+      где один кристаллик - “совсем не нравится”, а пять кристалликов - “очень нравится”.</p>
+    <p>Действуй!</p>
+  </div>
+
+</ng-template>
+
+<ng-template #aftertest>
+  <div class="style-3 content-body">
+    <h1>Здравствуй, путник!</h1>
+    <p>В нашей гильдии открыты мастерские:</p>
+    <ul>
+      <li *ngFor="let c of chairs">
+        {{ c.name }}
+      </li>
+    </ul>
+    <p>Приглашаем тебя познакомиться с тем, каких мастеров у нас готовят. </p>
+
+  </div>
+
+</ng-template>
+
+<ng-template #aftertest2>
+  <div class="style-3 content-body">
+    <h1>Поздравляем, добрый путник! </h1>
+    <p>Мы спешим сообщить тебе радостную весть: тебя приглашают стать подмастерьем гильдии {{ guild }}</p>
+  </div>
+
+
+</ng-template>
+
+<ng-template #youtube>
+
+  <iframe width="1000" height="500" src="https://www.youtube.com/embed/APwCH8ai2gg" frameborder="0"
+    allowfullscreen></iframe>
+
+</ng-template>

@@ -1,0 +1,70 @@
+<ng-container *ngIf="step === 2">
+  <div
+    class="main"
+    [style.background-image]="
+      'url(\'' + '/assets/results/back2' + '.png' + '\')'
+    "
+  ></div>
+  <div
+    class="board"
+    [style.background-image]="
+      'url(\'' +
+      '/assets/results/board-result/' +
+      data.mainResults[0].result.linkToImage +
+      '.png' +
+      '\')'
+    "
+  ></div>
+  <div class="actions">
+    <app-action-button
+      text="Выход"
+      [char]="data.mainResults[0].result.linkToImage"
+      (click)="restart()"
+    >
+    </app-action-button>
+    <app-action-button
+      text="Поступить"
+      [char]="data.mainResults[0].result.linkToImage"
+      (click)="moveToMainSite()"
+    >
+    </app-action-button>
+  </div>
+  <div class="chairs">
+    <app-chair-button
+      *ngFor="let chair of data.mainResults[0].result.chairs"
+      [text]="chair.abbreviation || chair.name"
+      [char]="data.mainResults[0].result.linkToImage"
+      (click)="selectChair(chair, chairInfo)"
+    >
+    </app-chair-button>
+  </div>
+
+  <div class="sign">
+    <app-prof-card
+      [img]="
+        '/assets/results/signs/' +
+        data.mainResults[0].result.linkToImage +
+        '.png'
+      "
+    ></app-prof-card>
+  </div>
+
+  <div class="logo">
+    <app-prof-card [img]="'/assets/logo2.png'"></app-prof-card>
+  </div>
+
+  <div class="chair-info">
+    <div class="chair-info-name">{{ selectedChair?.name }}</div>
+    <div
+      #chairInfo
+      class="chair-info-description style-3"
+      [style.font-size]="getFontSize(selectedChair!.description)"
+    >
+      <p *ngFor="let p of textWithBreaks(selectedChair!.description)">
+        {{ p }}
+      </p>
+    </div>
+  </div>
+</ng-container>
+
+<img hidden *ngFor="let img of images" [src]="img" />

@@ -1,0 +1,27 @@
+.action-button {
+  width: 475px;
+  height: 140px;
+
+  font-family: "Penguin";
+  display: flex;
+
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+  background-repeat: round;
+}
+
+.button-text {
+  font-family: "Penguin" !important;
+  color: white;
+  font-size: 36px;
+  user-select: none;
+}
+
+.hov {
+  padding-bottom: 2px;
+  padding-left: 2px;
+}
+
+

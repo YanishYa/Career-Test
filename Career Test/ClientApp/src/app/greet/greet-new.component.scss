@@ -1,0 +1,150 @@
+.main {
+  /*width: 100%;
+  height: 100%;*/
+  background-image: url("/assets/greet-background.png");
+  background-repeat: round;
+  max-width: 100%;
+  max-height: 100%;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  overflow: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
+.form-board {
+  position: relative;
+  background-image: url(/assets/greet-board.png);
+  width: 50%;
+  max-height: 600px;
+  max-width: 620px;
+  background-repeat: round;
+  top: 5%;
+  left: 10%;
+  display: flex;
+}
+
+.button-container {
+  position: relative;
+  top: 10%;
+  left: 30%;
+  display: flex;
+  width: 20%;
+}
+
+.form {
+  background-color: transparent;
+  color: white;
+  border: none !important;
+  box-shadow: none !important;
+  margin: auto;
+  width: 600px;
+}
+
+:host {
+  ::ng-deep .mat-form-field {
+    .mat-input-element {
+      color: white;
+    }
+    .mat-form-field-label {
+      color: white;
+    }
+    .mat-form-field-underline {
+      background-color: white;
+    }
+    .mat-form-field-ripple {
+      background-color: white;
+    }
+    .mat-form-field-required-marker {
+      color: white;
+    }
+    .mat-select-value {
+      color: white;
+    }
+  }
+}
+
+mat-form-field {
+  font-size: 28px;
+  width: 100%;
+}
+
+.greet-text {
+  font-size: 28px;
+}
+
+.castle {
+  position: absolute;
+  background-repeat: round;
+
+  width: 400px;
+  height: 750px;
+  z-index: 200;
+  top: 100px;
+  right: 10%;
+}
+
+.dubna {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  right: 50px;
+  top: 50px;
+  background-image: url('/assets/logo2.png');
+  background-repeat: round;
+}
+
+.start-button {
+  background-image: url(/assets/buttons/action-button-greet/hov.png);
+  background-repeat: round;
+  background-color: transparent;
+}
+@media screen and (max-width: 770px) {
+  .dubna {
+    visibility: hidden;
+  }
+  .form-board {
+      //background-image: none;
+      width: 80%;
+      height: 70%;
+      top: 1%;
+  }
+  .greet-text {
+      font-size: 18px;
+      max-width: 100%;
+  }
+  .form {
+      max-width: 350px;
+  }
+  .mat-form-field{
+      font-size: 18px;
+  }
+  .button-container {
+      position: relative;
+      left: 0;
+      margin-top: 5%;
+      margin-left: 55%;
+      top: 0;
+      height: 50px;
+      width: 100px;
+  }
+  .start-button{
+      height: 50px;
+      width: 100px;
+  }
+  .action-button{
+      height: 50px;
+      width: 50px;
+  }
+  .button-text{
+      font-size: 12px;
+  }
+  .castle{
+      visibility: hidden;
+  }
+}
+//@media screen and (max-width )

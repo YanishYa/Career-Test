@@ -1,0 +1,64 @@
+:host {
+  display: flex;
+  justify-content: center;
+
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+mat-card-title,
+mat-card-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.error {
+  padding: 16px;
+  color: white;
+  background-color: red;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+
+
+  .mat-button {
+    font-size: 18px;
+    color: #605075;
+  }
+}
+
+.auth-card {
+  background-color: rgba(255,255,255, 0.8);
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  min-width: 240px;
+  width: 50%;
+  min-height: 260px;
+  height: max-content;
+  max-width: 500px;
+
+  margin-top: 200px;
+}
+
+:host::ng-deep.mat-checkbox-layout {
+  white-space: normal !important;
+  line-height: 2;
+}
+
+:host::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element {
+  opacity: 0.03 !important;
+  background-color: #5B1ABB!important;
+}
+
+:host::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #5B1ABB;
+}

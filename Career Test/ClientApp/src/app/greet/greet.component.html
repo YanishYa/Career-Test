@@ -1,0 +1,60 @@
+<div class="main">
+  <div class="form-board">
+    <mat-card class="form">
+      <p class="greet-text">
+        Дорогие абитуриетны, предлагаем вам пройти профориентационный тест.
+      </p>
+      <p class="greet-text">Представьтесь, чтобы начать:</p>
+      <p class="greet-text">
+        <mat-form-field>
+          <!-- <input
+            type="text"
+            matInput
+
+            [form]="name"
+            required
+          /> -->
+          <input type = "email" matInput placeholder="Email" [formControl]="email" required />
+          <mat-error *ngIf="name.invalid">Введите Email</mat-error>
+        </mat-form-field>
+      </p>
+      <p class="greet-text">
+        <mat-form-field>
+          <!-- <input
+            type="text"
+            matInput
+
+            [form]="name"
+            required
+          /> -->
+          <input matInput placeholder="Ваше имя" [formControl]="name" required />
+          <mat-error *ngIf="name.invalid">Введите имя</mat-error>
+        </mat-form-field>
+      </p>
+      <p class="greet-text">
+        <mat-form-field>
+          <mat-label>Пол</mat-label>
+          <mat-select [formControl]="gender">
+            <mat-option [value]="0">Не указано</mat-option>
+            <mat-option [value]="1">Мужской</mat-option>
+            <mat-option [value]="2">Женский</mat-option>
+          </mat-select>
+          <mat-error *ngIf="gender.invalid">Укажите ваш пол</mat-error>
+        </mat-form-field>
+      </p>
+    </mat-card>
+  </div>
+  <div class="button-container">
+    <!--<button class="start-button">
+      Начать
+    </button>-->
+    <app-common-action-button class="start-button" (cl)="start()" text="Начать">
+    </app-common-action-button>
+  </div>
+  <div class="castle">
+    <app-prof-card [img]='"/assets/castle.png"'>
+
+    </app-prof-card>
+  </div>
+  <div class="dubna"></div>
+</div>

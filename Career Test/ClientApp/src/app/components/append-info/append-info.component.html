@@ -1,0 +1,74 @@
+<h1 mat-dialog-title>Дополните информацию о себе, чтобы продолжить</h1>
+<div mat-dialog-content>
+  <p>
+    <mat-form-field>
+      <input
+        type="tel"
+        matInput
+        placeholder="Телефон"
+        [(ngModel)]="model.phone"
+      />
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="ФИО" [(ngModel)]="model.fio" />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <input
+        type="number"
+        matInput
+        placeholder="Возраст"
+        [(ngModel)]="model.age"
+      />
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <input
+        type="text"
+        matInput
+        placeholder="Город"
+        [(ngModel)]="model.city"
+      />
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <input
+        type="text"
+        matInput
+        placeholder="Школа"
+        [(ngModel)]="model.school"
+      />
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <input
+        type="text"
+        matInput
+        placeholder="Класс"
+        [(ngModel)]="model.class"
+      />
+    </mat-form-field>
+  </p>
+
+  <p *ngIf="error" class="error">
+    {{ error }}
+  </p>
+  <p>
+    <mat-checkbox [(ngModel)]="agree">
+      Согласие с обработкой персональных данных
+    </mat-checkbox>
+  </p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button cdkFocusInitial (click)="save()">Сохранить</button>
+</div>

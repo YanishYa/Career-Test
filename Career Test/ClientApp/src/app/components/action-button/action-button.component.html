@@ -1,0 +1,16 @@
+<div
+  class="action-button"
+  (click)="onClick($event)"
+  [style.background-image]="
+    'url(\'' + '/assets/buttons/action-button/' + hov + '/' + char + '.png' + '\')'
+  "
+  [style.width]="width"
+  [style.hight]="height"
+  (mouseenter)="onEnter()"
+  (mouseleave)="onLeave()"
+>
+<div class="button-text" [ngClass]="{'hov': hov == 'hov'}">
+  {{ text }}
+</div>
+
+</div>

@@ -1,0 +1,310 @@
+.main {
+  width: 100%;
+  height: 110%;
+
+  display: flex;
+  flex-direction: column;
+  background-repeat: round;
+  background-position: 0 -88px;
+
+}
+
+.main-container {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  position: absolute;
+  overflow: hidden;
+}
+
+.door {
+  width: 425px;
+  height: 565px;
+  top: 357px;
+  left: 1380px;
+
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  background-repeat: round;
+  -webkit-transform: translate3d(0,0,0);
+}
+
+.item-card-container {
+  top: 445.25px;
+  left: 200px;
+
+  width: 225px;
+  height: 423.75px;
+}
+
+.character-card-container {
+  top: 347px;
+  left: 600px;
+
+  width: 300px;
+
+  height: 565px;
+}
+
+.animal-card-container {
+  top: 445.25px;
+  left: 1000px;
+
+  width: 225px;
+  height: 423.75px;
+}
+
+.card-container {
+
+
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  background-position: bottom;
+}
+
+.board {
+  width: 1135px;
+  height: 766px;
+
+  top: 100px;
+
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  background-position: bottom;
+}
+
+.actions {
+  width: 500px;
+  height: 300px;
+
+  top: 550px;
+  right: 120px;
+
+  position: absolute;
+
+  text-align: center;
+
+  justify-content: space-between;
+
+  display: flex;
+  flex-direction: column;
+  background-position: bottom;
+  z-index: 1000;
+}
+
+.chairs {
+  width: 500px;
+  height: 700px;
+  top: 133px;
+  left: 40px;
+  position: absolute;
+  text-align: center;
+  justify-content: center;
+
+  display: flex;
+  flex-direction: column;
+  background-position: bottom;
+  z-index: 1000;
+}
+
+.sign {
+  width: 322px;
+  height: 322px;
+
+  top: 100px;
+  right: 225px;
+
+  position: absolute;
+
+  text-align: center;
+
+  justify-content: space-between;
+
+  display: flex;
+  flex-direction: column;
+  background-position: bottom;
+  z-index: 1000;
+}
+
+.chair-info {
+  width: 600px;
+  height: 700px;
+
+  top: 150px;
+  left: 450px;
+
+  position: absolute;
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  background-position: bottom;
+  z-index: 1000;
+
+  color: white;
+
+  .chair-info-name {
+    text-align: center;
+
+    font-size: 36px;
+    font-family: "Penguin" !important;
+
+    margin-bottom: 20px;
+  }
+
+  .chair-info-description {
+    text-align: justify;
+
+    font-size: 18px;
+    font-family: "Penguin" !important;
+    line-height: 1;
+  }
+}
+
+app-prof-card {
+  width: 340px;
+
+  height: 520px;
+}
+
+.powers {
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;
+  bottom: 0;
+  font-size: 24px;
+}
+
+.arrow {
+  //background-image: url('/assets/arrow.png');
+  position: absolute;
+  top: 500px;
+  right:  430px;
+  width: 140px;
+  height: 100px;
+
+  transform: rotate(25deg);
+}
+
+.buttons-first-page {
+  position: absolute;
+  top: 305px;
+  left: 200px;
+
+  display: flex;
+  justify-content: space-between;
+
+  width: 1140px;
+}
+
+.board-1 {
+  position: absolute;
+  top: 55px;
+  left: 256px;
+  width: 1395px;
+  height: 216px;
+  color: white;
+
+  .board-title {
+    font-size: 44px;
+    line-height: 1;
+    text-align: center;
+  }
+
+  .board-body {
+    font-size: 36px;
+    line-height: 1.5;
+    height: 177px;
+
+    color: #f0f0f0;
+  }
+
+  li {
+    color: #f0f0f0;
+  }
+}
+
+.help-button {
+  position: absolute;
+  top: 55px;
+  left: 256px;
+  width: 50px;
+  height: 50px;
+  z-index: 100;
+}
+
+// .loader-container {
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   margin: auto;
+//   position: absolute;
+//   display: flex;
+//   width: 248px;
+
+//   flex-direction: column;
+//   justify-content: center;
+//   align-content: center;
+//   text-align: center;
+// }
+
+// .result-container {
+//   top: 50px;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+
+//   position: absolute;
+//   height: 500px;
+//   width: 100%;
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .text-deck {
+//   font-size: 18px;
+//   color: white;
+// }
+
+// .cards-container {
+//   display: flex;
+//   justify-content: center;
+
+//   @media screen and (max-width: 900px) {
+//     flex-direction: column;
+//   }
+// }
+
+// .c-btn {
+//   background: rgba(48, 33, 77, 0.7);
+//   border-radius: 25px;
+//   border: none;
+//   color: white;
+//   padding: 4px 32px;
+//   text-align: center;
+//   text-decoration: none;
+//   display: inline-block;
+
+//   font-family: 'Calibri';
+//   font-style: normal;
+//   font-weight: 400;
+//   font-size: 32px;
+//   line-height: 40px;
+//   min-width: max-content;
+
+//   color: #ffffff;
+
+//   margin: 2px;
+// }

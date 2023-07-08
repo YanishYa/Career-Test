@@ -1,0 +1,35 @@
+.content {
+  width: 800px;
+  height: 400px;
+  position: relative;
+}
+
+.big-content {
+  width: 1046px;
+  height: 507px;
+}
+
+h1 {
+  font-size: 56px;
+  color: white;
+}
+p, li {
+  font-size: 44px;
+  color: #f0f0f0;
+}
+
+p {
+  font-size: 36px;
+}
+
+.content-body {
+  padding: 9px;
+  line-height: 1.25;
+  height: 406px;
+}
+
+.close-button {
+  position: absolute;
+  right: 30px;
+  top: 0;
+}

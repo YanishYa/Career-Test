@@ -1,0 +1,14 @@
+<div
+  class="action-button"
+  (click)="onClick($event)"
+  [style.background-image]="
+    'url(\'' + '/assets/results/buttons/chair/' + hov + '/' + char + '.png' + '\')'
+  "
+  (mouseenter)="onEnter()"
+  (mouseleave)="onLeave()"
+>
+<div class="button-text" [style.font-size]="getFontSize(text)">
+  {{ text }}
+</div>
+
+</div>

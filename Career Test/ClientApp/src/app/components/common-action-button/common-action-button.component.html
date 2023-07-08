@@ -1,0 +1,11 @@
+<div
+  class="action-button"
+  (click)="onClick($event)"
+  [style.background-image]="getImage()"
+  (mouseenter)="onEnter()"
+  (mouseleave)="onLeave()"
+>
+  <div class="button-text">
+    {{ text }}
+  </div>
+</div>

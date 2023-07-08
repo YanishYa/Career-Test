@@ -1,0 +1,4 @@
+@font-face {
+  font-family: 'penguin-attack';
+  src: url("PenguinAttack.woff2") format("woff2"), url("PenguinAttack.woff") format("woff");
+}
